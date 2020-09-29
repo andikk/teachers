@@ -43,7 +43,8 @@ const Operation = {
       });
   },
 
-  loadTeacher: () => (dispatch, getState, api) => {
+  loadTeacher: (id) => (dispatch, getState, api) => {
+    //return api.get(`/teacher/${id}`)
     return api.get(`teacher.json`)
       .then((response) => {
         dispatch(ActionCreator.setTeacher(response.data));
